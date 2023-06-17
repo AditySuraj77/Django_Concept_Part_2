@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+
+<div class="container display-3 text-center">
+    <h2>Player Detail</h2>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <h2> Name : {{playerdetails.name}}</h2>
+
+    <h3>Age : {{playerdetails.age}}</h3>
+
+    <p> Details : {{playerdetails.detail | safe}}</p>
+</div>
+
+{% endblock %}
+
+

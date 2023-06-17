@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<br>
+
+
+<div class="container display-3 text-center">
+    <h2>List Of Player</h2>
+</div>
+
+
+<form class="form-inline my-2 my-lg-0"> <!-- Search box for item serching-->
+    <input name="textsearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<br>
+
+
+<br>
+<br>
+<br>
+
+<div class="container-fluid">
+    <marquee width="100%" direction="left" height="25px" onmouseover="stop()" onmouseout="start()">
+        {% for n in teamdata %}
+        <a href="/playerdetail/{{n.new_slug}}"> {{n.name}} </a> &nbsp;&nbsp;
+        {% empty %}
+        No Data Found
+        {% endfor %}
+    </marquee>
+</div>
+
+{% endblock %}

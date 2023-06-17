@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+
+
+<div class="container display-3 text-center">
+    <h2>List Of Teams</h2>
+</div>
+
+  <div>
+<nav aria-label="...">
+  <ul class="pagination">
+      {% for page in totalpage %}
+    <li class="page-item"><a class="page-link" href="/team/?page={{page}}">{{page}}</a></li>
+      {% endfor %}
+  </ul>
+</nav>
+  </div>
+
+<div>
+
+    {% for team in teamdata %}
+    <h2>Name : {{team.t_name}}</h2>
+    <h3>Origin : {{team.t_origin}}</h3>
+    <img src="/media/{{team.t_file}}" class="img-fluid"> <!--This code display images-->
+    <p>Description : {{team.t_desc | safe}}</p>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
